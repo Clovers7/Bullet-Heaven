@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://sbfmucpranyq"]
+
+[ext_resource type="Texture2D" uid="uid://d38qte3p0icy4" path="res://Images/keycaps.png" id="1_s0rhm"]
+[ext_resource type="Script" path="res://Scenes/keycaps.gd" id="1_x75sn"]
+[ext_resource type="FontFile" uid="uid://blh0fvoa2736x" path="res://Fonts/BigNoodleTooKorean.ttf" id="3_okj71"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fxuik"]
+font = ExtResource("3_okj71")
+font_size = 24
+font_color = Color(0.882353, 0, 0.431373, 1)
+
+[sub_resource type="Environment" id="Environment_rsai1"]
+background_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.83
+glow_strength = 0.65
+glow_bloom = 0.47
+glow_blend_mode = 0
+glow_hdr_luminance_cap = 30.86
+
+[node name="Keycaps" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_x75sn")
+
+[node name="left" type="Sprite2D" parent="."]
+position = Vector2(970, 120)
+texture = ExtResource("1_s0rhm")
+
+[node name="right" type="Sprite2D" parent="."]
+position = Vector2(1110, 120)
+rotation = 3.14159
+texture = ExtResource("1_s0rhm")
+
+[node name="up" type="Sprite2D" parent="."]
+position = Vector2(1040, 50)
+rotation = 1.5708
+texture = ExtResource("1_s0rhm")
+
+[node name="down" type="Sprite2D" parent="."]
+position = Vector2(1040, 140)
+rotation = -1.5708
+texture = ExtResource("1_s0rhm")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.859
+anchor_top = 0.276
+anchor_right = 0.964
+anchor_bottom = 0.335
+offset_left = 6.43195
+offset_top = 2.15201
+offset_right = 6.47192
+offset_bottom = 1.92
+text = "Pressed Keys"
+label_settings = SubResource("LabelSettings_fxuik")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Label"]
+environment = SubResource("Environment_rsai1")

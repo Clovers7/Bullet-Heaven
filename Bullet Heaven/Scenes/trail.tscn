@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsvm04itps8hc"]
+
+[ext_resource type="Script" path="res://Scripts/Trail.gd" id="1_d82n3"]
+
+[node name="Trail" type="Line2D"]
+default_color = Color(0, 1, 1, 1)
+script = ExtResource("1_d82n3")

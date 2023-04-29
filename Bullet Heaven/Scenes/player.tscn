@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://dae8ib7qfsl5s"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_mad56"]
+[ext_resource type="PackedScene" uid="uid://bsvm04itps8hc" path="res://Scenes/trail.tscn" id="2_gr06j"]
+[ext_resource type="Texture2D" uid="uid://bhp3pqsqs1c1e" path="res://Images/char3.png" id="2_u4fr1"]
+
+[sub_resource type="Curve" id="Curve_wyfko"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_nk48u"]
+colors = PackedColorArray(0.48127, 0.298221, 1.92523e-07, 1, 0.999999, 0.991296, 0.66561, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0xs4"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta0eu"]
+size = Vector2(30, 30)
+
+[sub_resource type="Environment" id="Environment_pkgia"]
+background_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 2.0
+glow_strength = 0.73
+glow_bloom = 0.32
+glow_blend_mode = 0
+glow_hdr_luminance_cap = 30.86
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_mad56")
+
+[node name="Trail" parent="." instance=ExtResource("2_gr06j")]
+modulate = Color(2, 2, 2, 1)
+show_behind_parent = true
+width = 20.0
+width_curve = SubResource("Curve_wyfko")
+default_color = Color(1, 0.786461, 0.541394, 1)
+gradient = SubResource("Gradient_nk48u")
+joint_mode = 2
+begin_cap_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(3, 3, 3, 1)
+self_modulate = Color(0.364706, 0.364706, 0.364706, 1)
+position = Vector2(-9.53674e-07, -9.53674e-07)
+scale = Vector2(0.121094, 0.121094)
+texture = ExtResource("2_u4fr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_i0xs4")
+
+[node name="hit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit"]
+visible = false
+shape = SubResource("RectangleShape2D_ta0eu")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pkgia")
