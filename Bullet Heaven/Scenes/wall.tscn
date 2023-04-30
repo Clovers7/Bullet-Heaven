@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvxldxhbjmldx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_itxva"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vfjdf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yr4el"]
+size = Vector2(40, 584)
+
+[node name="Wall" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_itxva")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(0, 290.938)
+scale = Vector2(40.5, 584.125)
+mesh = SubResource("BoxMesh_vfjdf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 291)
+shape = SubResource("RectangleShape2D_yr4el")

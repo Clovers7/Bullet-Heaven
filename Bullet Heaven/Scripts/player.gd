@@ -2,11 +2,12 @@ extends CharacterBody2D
 
 const invincibility_duration = 1.5
 @export var speed = 300
+@onready var d_cooldown = $DashTimer
 
 func _ready():
 	pass
 
-func _physics_process(_delta):
+func _process(_delta):
 	velocity = Vector2()
 	
 	if Input.is_action_pressed("down"):
@@ -26,3 +27,16 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("down"):
 		rotation_degrees = 180
 	move_and_slide()
+
+func _physics_process(delta):
+	if Input.is_action_pressed("dash"):
+		dash()
+
+func dash():
+	if d_cooldown.is_stopped():
+		speed = 600
+		$Timer.start()
+		d_cooldown.start()
+
+func _on_timer_timeout():
+	speed = 300

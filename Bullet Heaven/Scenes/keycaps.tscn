@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://sbfmucpranyq"]
+[gd_scene load_steps=5 format=3 uid="uid://sbfmucpranyq"]
 
 [ext_resource type="Texture2D" uid="uid://d38qte3p0icy4" path="res://Images/keycaps.png" id="1_s0rhm"]
 [ext_resource type="Script" path="res://Scenes/keycaps.gd" id="1_x75sn"]
@@ -8,16 +8,6 @@
 font = ExtResource("3_okj71")
 font_size = 24
 font_color = Color(0.882353, 0, 0.431373, 1)
-
-[sub_resource type="Environment" id="Environment_rsai1"]
-background_mode = 3
-glow_enabled = true
-glow_normalized = true
-glow_intensity = 1.83
-glow_strength = 0.65
-glow_bloom = 0.47
-glow_blend_mode = 0
-glow_hdr_luminance_cap = 30.86
 
 [node name="Keycaps" type="Control"]
 layout_mode = 3
@@ -61,6 +51,3 @@ offset_right = 6.47192
 offset_bottom = 1.92
 text = "Pressed Keys"
 label_settings = SubResource("LabelSettings_fxuik")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Label"]
-environment = SubResource("Environment_rsai1")

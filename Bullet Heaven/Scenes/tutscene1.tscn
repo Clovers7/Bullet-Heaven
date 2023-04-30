@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt5ggpolkgkms"]
+
+[ext_resource type="PackedScene" uid="uid://dae8ib7qfsl5s" path="res://Scenes/player.tscn" id="1_44k7h"]
+[ext_resource type="PackedScene" uid="uid://sbfmucpranyq" path="res://Scenes/keycaps.tscn" id="2_b4oxa"]
+[ext_resource type="PackedScene" uid="uid://b6l4ucfcku1dy" path="res://Scenes/exit_1.tscn" id="3_37xj8"]
+
+[sub_resource type="Environment" id="Environment_d50t2"]
+background_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 2.25
+glow_strength = 0.44
+glow_bloom = 0.56
+glow_blend_mode = 0
+glow_hdr_luminance_cap = 30.86
+
+[node name="test_scene" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0, 0.0588235, 0.105882, 1)
+
+[node name="player" parent="." instance=ExtResource("1_44k7h")]
+position = Vector2(112, 121)
+
+[node name="Keycaps" parent="." instance=ExtResource("2_b4oxa")]
+
+[node name="Exit1" parent="." instance=ExtResource("3_37xj8")]
+modulate = Color(0.903598, 0.903598, 0.903598, 1)
+self_modulate = Color(0.0765093, 0.193992, 0.124367, 1)
+position = Vector2(1006, 541)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d50t2")

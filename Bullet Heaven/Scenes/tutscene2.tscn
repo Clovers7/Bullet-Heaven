@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0xrevs0n80xw"]
+
+[ext_resource type="PackedScene" uid="uid://dae8ib7qfsl5s" path="res://Scenes/player.tscn" id="1_vxb8e"]
+[ext_resource type="PackedScene" uid="uid://e2y20vv4i6fk" path="res://Scenes/skillset.tscn" id="2_0arca"]
+[ext_resource type="PackedScene" uid="uid://dvxldxhbjmldx" path="res://Scenes/wall.tscn" id="3_6xenf"]
+[ext_resource type="PackedScene" uid="uid://csem3taolr8du" path="res://Scenes/exit_2.tscn" id="4_lorpq"]
+
+[sub_resource type="Environment" id="Environment_4h2px"]
+background_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.83
+glow_strength = 0.65
+glow_bloom = 0.47
+glow_blend_mode = 0
+glow_hdr_luminance_cap = 30.86
+
+[node name="test_scene_2" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0705882, 0.054902, 0.0745098, 1)
+
+[node name="player" parent="." instance=ExtResource("1_vxb8e")]
+position = Vector2(49, 62)
+
+[node name="O_skill" parent="." instance=ExtResource("2_0arca")]
+
+[node name="Wall" parent="." instance=ExtResource("3_6xenf")]
+position = Vector2(110, 1)
+
+[node name="Wall3" parent="." instance=ExtResource("3_6xenf")]
+position = Vector2(367, 1)
+
+[node name="Wall4" parent="." instance=ExtResource("3_6xenf")]
+position = Vector2(237, 63)
+
+[node name="Exit2" parent="." instance=ExtResource("4_lorpq")]
+position = Vector2(1037, 548)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4h2px")
