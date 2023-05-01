@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckd6lg6jajuu0"]
+
+[ext_resource type="Script" path="res://Scripts/L_Control.gd" id="1_jwpeg"]
+[ext_resource type="FontFile" uid="uid://blh0fvoa2736x" path="res://Fonts/BigNoodleTooKorean.ttf" id="2_06jck"]
+[ext_resource type="Texture2D" uid="uid://q2qar62c1jk2" path="res://Images/icon_paper.png" id="3_nbae4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2b3q0"]
+font = ExtResource("2_06jck")
+font_size = 160
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3mgk"]
+font = ExtResource("2_06jck")
+font_size = 90
+
+[node name="Prompt_Inter" type="Node"]
+
+[node name="L_Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jwpeg")
+
+[node name="L1" type="Label" parent="L_Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -24.0
+offset_right = 415.0
+offset_bottom = 162.0
+text = "INTERACT"
+label_settings = SubResource("LabelSettings_2b3q0")
+
+[node name="L2" type="Label" parent="L_Control"]
+layout_mode = 0
+offset_left = 438.0
+offset_top = -10.0
+offset_right = 691.0
+offset_bottom = 169.0
+text = "With"
+label_settings = SubResource("LabelSettings_d3mgk")
+
+[node name="L3" type="Sprite2D" parent="L_Control"]
+position = Vector2(680.5, 92.5)
+scale = Vector2(0.691406, 0.691406)
+texture = ExtResource("3_nbae4")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbd54nd14ltgw"]
+
+[ext_resource type="Script" path="res://Dialogue Box.gd" id="1_halmp"]
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dialogue Box" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_halmp")
+
+[node name="Text" type="RichTextLabel" parent="Dialogue Box"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Indication" type="Polygon2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Indication"]
+
+[node name="Face" type="Sprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

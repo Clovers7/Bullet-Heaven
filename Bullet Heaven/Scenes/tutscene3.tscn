@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://7qb8hi30plh3"]
+[gd_scene load_steps=5 format=3 uid="uid://cg15ils0ppusi"]
 
 [ext_resource type="PackedScene" uid="uid://dae8ib7qfsl5s" path="res://Scenes/player.tscn" id="1_ji02n"]
+[ext_resource type="PackedScene" uid="uid://oqmjuhxggcy5" path="res://Scenes/paper.tscn" id="2_bfdbm"]
+[ext_resource type="PackedScene" uid="uid://ckd6lg6jajuu0" path="res://Scenes/prompt_inter.tscn" id="3_38fiw"]
 
 [sub_resource type="Environment" id="Environment_0esu2"]
 background_mode = 3
 glow_enabled = true
 glow_normalized = true
-glow_intensity = 1.13
+glow_intensity = 1.05
 glow_strength = 0.77
-glow_bloom = 0.23
+glow_bloom = 0.36
 glow_blend_mode = 0
 
 [node name="test_scene_3" type="Node"]
@@ -27,3 +29,8 @@ position = Vector2(77, 314)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="player"]
 environment = SubResource("Environment_0esu2")
+
+[node name="Paper" parent="." instance=ExtResource("2_bfdbm")]
+position = Vector2(1033, 315)
+
+[node name="Prompt_Inter" parent="." instance=ExtResource("3_38fiw")]

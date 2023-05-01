@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://oqmjuhxggcy5"]
+
+[ext_resource type="Texture2D" uid="uid://c1qrs5rvnip6l" path="res://Images/sheet.png" id="1_ko2c3"]
+[ext_resource type="Script" path="res://Scenes/interare.gd" id="2_43xma"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjrbq"]
+radius = 64.0312
+
+[node name="Paper" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ko2c3")
+
+[node name="interare" type="Area2D" parent="."]
+collision_layer = 16
+script = ExtResource("2_43xma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interare"]
+shape = SubResource("CircleShape2D_bjrbq")
